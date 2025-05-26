@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Form</title>
+  <style>
+
+
+    .form-container {
+      background: white;
+      padding: 20px;
+      border: 1px solid white;
+      width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 10px solid rgb(188, 185, 185);
+    }
+
+    h2 {
+      border-bottom: 1px solid rgb(173, 170, 170);
+      padding-bottom: 5px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .form-group label {
+      flex: 0 0 150px;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      flex: 1;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .gender-options label {
+        display: block;
+        margin-bottom: -15px; /* tùy chọn để giãn cách */
+    }
+
+
+    .captcha {
+      font-family: monospace;
+      font-size: 20px;
+      letter-spacing: 4px;
+      margin: 10px 0;
+      background: #ddd;
+      display: inline-block;
+      padding: 5px 10px;
+      user-select: none;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin-left: 5px;
+    }
+    .dropdown select {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px 1px;
+    }
+    .Russian select {
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 10px 5px;
+    }
+    .shift-options label {
+        display: block;
+        margin-bottom: 0px; /* tùy chọn để giãn cách */
+    }
+  </style>
+</head>
+<body>
+  <form class="form-container">
+    <h2>Basic Info</h2>
+
+    <div class="form-group">
+      <label><strong>Employee ID</strong></label>
+      <label>9</label>
+    </div>
+
+    <div class="form-group">
+      <label><strong>Last Name</strong></label>
+      <label>Dodsworth</label>
+    </div>
+
+    <div class="form-group">
+      <label><strong>First Name</strong></label>
+      <input type="text" value="Anne" required>
+    </div>
+
+    <div class="form-group">
+      <label><strong>Gender</strong></label>
+      <div class="gender-options">
+        <label><input type="radio" name="gender"> Male</label><br>
+        <label><input type="radio" name="gender"> Female</label><br>
+        <label><input type="radio" name="gender"> XXX</label><br>
+        <label><input type="radio" name="gender" checked> ZZZ</label><br>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><strong>Title</strong></label>
+      <input type="text" value="Sales Representative">
+    </div>
+
+    <div class="form-group">
+      <label><strong>Suffix</strong></label>
+      <input type="text" value="Ms.">
+    </div>
+
+    <div class="form-group">
+      <label><strong>BirthDate</strong></label>
+      <input type="datetime-local" value="1969-07-02 00:00:00">
+    </div>
+
+    <div class="form-group">
+<label><strong>HireDate</strong></label>
+      <input type="datetime-local" value="1994-11-15 00:00:00">
+    </div>
+
+    <div class="form-group">
+      <label><strong>SSN (if applicable)</strong></label>
+      <input type="text">
+    </div>
+
+    <div class="form-group">
+      <label><strong>Reports To</strong></label>
+      <div class="dropdown">
+        <select>
+          <option value="buchanan">Buchanan</option>
+        </select>
+      </div>
+    </div>
+
+    <h2>Contact Info</h2>
+
+    <div class="form-group">
+      <label><strong>Email</strong></label>
+      <input type="email" placeholder="name@example.com">
+    </div>
+
+    <div class="form-group">
+      <label><strong>Address</strong></label>
+      <input type="text" value="7 Houndstooth Rd.">
+    </div>
+
+    <div class="form-group">
+      <label><strong>City</strong></label>
+      <input type="text" value="London">
+    </div>
+
+    <div class="form-group">
+      <label><strong>Region</strong></label>
+      <input type="text">
+    </div>
+
+    <div class="form-group">
+      <label><strong>Postal Code</strong></label>
+      <input type="text" value="WG2 7LT">
+    </div>
+
+    <div class="form-group">
+      <label><strong>Country</strong></label>
+      <div class="Russian">
+        <select>
+            <option>Russian Federation</option>
+          </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><strong>US Home Phone</strong></label>
+      <input type="tel" value="(234)234-2342">
+    </div>
+
+    <div class="form-group">
+      <label><strong>Photo</strong></label>
+      <input type="text" value="EmpID9.bmp">
+    </div>
+
+    <h2>Optional Info</h2>
+
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea rows="4">Anne has a BA degree in English from St. Lawrence College.
+She is fluent in French and German.ZZZ</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Preferred Shift</label>
+      <div class="shift-options">
+        <label><input type="checkbox"> Regular</label>
+        <label><input type="checkbox" checked> Gravy Yard</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Active?</label>
+      <label><input type="checkbox" checked></label>
+    </div>
+
+    <div class="form-group">
+      <label>Are you human?</label>
+      <div>
+        <div class="captcha">TIDAWO</div> <br>
+        <label>Click to change</label> <br>
+        
+        <input type="text" placeholder="Enter text above">
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="submit">Submit</button>
+      <button type="reset">Cancel</button>
+    </div>
+  </form>
+</body>
+</html>

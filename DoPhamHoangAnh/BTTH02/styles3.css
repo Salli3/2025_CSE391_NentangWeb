@@ -1,0 +1,63 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 40px;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #cce7f3;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    background: white;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 300px;
+  }
+
+  .card h2 {
+    font-size: 1em;
+    margin-bottom: 16px;
+  }
+
+  .card p {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  .author {
+    margin-top: 16px;
+    font-weight: bold;
+  }
+
+  .author span {
+    display: block;
+    color: #2b79c2;
+    font-size: 0.9em;
+  }
+
+  .text-block {
+    max-width: 600px;
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  .text-block strong {
+    font-weight: bold;
+  }

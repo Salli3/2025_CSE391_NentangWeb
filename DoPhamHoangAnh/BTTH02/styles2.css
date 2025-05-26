@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #45105a;
+    color: #333;
+  }
+
+  /* HERO section */
+  .hero {
+    background-image: url("ocean.jpg"); /* ảnh nền */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-bar h1 {
+    font-family: "Brush Script MT", cursive;
+    font-size: 26px;
+    color: gold;
+  }
+
+  .top-bar nav a {
+    color: gold;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .hero h2 {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px 25px;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .hero button {
+    background-color: yellow;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Highlights */
+  .highlights {
+    background-color: #e4f7fa;
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 30%;
+    margin: 10px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border: 2px;
+  }
+
+  .card p {
+    padding: 10px;
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    font-size: 10px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #160322;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  footer a img {
+    width: 30px;
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+  .city {
+    color: rgba(52, 51, 50, 0.616);
+    font-weight: bold;
+  }
+  .country {
+    color: aqua;
+    font-weight: bold;
+  }

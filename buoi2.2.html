@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký Tài Khoản</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; padding: 40px; }
+        .form-container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
+        .form-title { margin-bottom: 20px; text-align: center; }
+        .form-control:focus { box-shadow: none; border-color: #86b7fe; }
+        .error { color: red; font-size: 0.9rem; display: none; }
+        #successMessage { display: none; margin-top: 20px; text-align: center; font-size: 1.2rem; color: green; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2 class="form-title">Đăng Ký Tài Khoản</h2>
+    <form id="registerForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">Họ tên</label>
+            <input type="text" id="name" class="form-control">
+            <span class="error" id="nameError">Họ tên không được để trống</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control">
+            <span class="error" id="emailError">Email không hợp lệ</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Mật khẩu</label>
+            <input type="password" id="password" class="form-control">
+            <span class="error" id="passwordError">Mật khẩu phải từ 8 ký tự</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Xác nhận mật khẩu</label>
+            <input type="password" id="confirmPassword" class="form-control">
+            <span class="error" id="confirmPasswordError">Mật khẩu xác nhận không khớp</span>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
+        </div>
+    </form>
+
+    <div id="successMessage">Đăng ký thành công! Chào mừng bạn!</div>
+</div>
+
+<script>
+    $(function() {
+        console.log("jQuery is ready!");
+
+        $('#registerForm').on('submit', function(e) {
+            e.preventDefault();
+            let valid = true;
+
+            // Ẩn lỗi
+            $('span.error').hide();
+
+            const name = $('#name').val().trim();
+            const email = $('#email').val().trim();
+            const password = $('#password').val();
+            const confirmPassword = $('#confirmPassword').val();
+
+            if (name === '') {
+                $('#nameError').show();
+                valid = false;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                $('#emailError').show();
+                valid = false;
+            }
+            if (password.length < 8) {
+                $('#passwordError').show();
+                valid = false;
+            }
+            if (password !== confirmPassword) {
+                $('#confirmPasswordError').show();
+                valid = false;
+            }
+
+            if (!valid) return;
+
+            // Gửi AJAX
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                method: 'POST',
+                data: {
+                    name: name,
+                    email: email,
+                    password: password
+                },
+                success: function(response) {
+                    $('#registerForm').slideUp();
+                    $('#successMessage').fadeIn();
+                    console.log("Response:", response);
+                },
+                error: function() {
+                    alert("Server bận, vui lòng thử lại sau");
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
